@@ -1,0 +1,44 @@
+<html>
+<head>
+    {% load static %} 
+<meta charset="utf-8">
+<title>Login Page</title>
+<link rel="stylesheet" type="text/css" href="{% static 'style/login.css' %}">
+<div>
+    {% for message in messages %}
+    <h1>{{ message }}</h1>
+    {% endfor %}
+  </div>
+</head>
+<body>
+<div class="login-box">
+
+<h1>Login</h1>
+
+<div class="textbox">
+<form action="login" method="post">
+    {% csrf_token %}
+<div>
+<i class="fa fa-user" aria-hidden="true"></i>
+<input type="text" placeholder="Username" name="username" required>
+</div>
+
+<div class="textbox">
+<i class="fa fa-lock" aria-hidden="true"></i>
+<input type="password" placeholder="Password" name="password" value="">
+
+</div>
+<div class="verification">
+    <input type="text" placeholder="verification" name="verification" required>
+</div>
+
+
+<input class="btn" type="submit" value="Sign in">
+</form>
+</div>
+<input class="btn2" type="button" name="" value="Forget Password">
+<a href="{% url 'register' %}"><input class="btn3" type="button" name="" value="register"></a>
+
+</div>
+</body>
+</html>

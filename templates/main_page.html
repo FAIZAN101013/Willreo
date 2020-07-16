@@ -1,0 +1,48 @@
+{% load static %}
+{% static "image" as baseUrl %}
+<html> 
+  <head> 
+  
+    <title>Sidebars</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'style/main.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
+   </head> 
+   <body background="{% static 'image/10.jpg' %}" >
+      <input type="checkbox" id="check"> 
+    <label for="check"> <i class="fa fa-bars" id="btn"></i> <i class="fa fa-times" id="cancel"></i> </label> 
+    <div class="sidebar"> 
+     <header>
+       WillReo
+     </header> 
+     <ul> 
+    
+      <li><a href="{% url 'upload' %}"><i class="fas fa-link"></i>Upload</a></li> 
+      <li><a href="{% url 'profile' %}"><i class="fa fa-user-circle"></i>Profile</a></li> 
+      <li><a href="{% url 'help' %}"><i class="fas fa-question-circle"></i>Help</a></li>
+      <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>	
+     </ul>
+ </div> 
+ {% for load in loads %}    
+   <div class="scroll_page"><h1>{{load.Name}}</h1>
+     <div class="scroll_image">
+        <img src="{{load.Image.url}}" alt=""  height="450px" width="520x">
+      </div>
+    </div>
+        
+        
+    
+    <div class="scroll_text">
+      <p>{{load.Description}}
+      </p><br><br>
+    </div>
+           
+            
+      
+  
+    {% endfor %}
+        
+    <section></section>
+   
+  </body>
+  
+  </html>

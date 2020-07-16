@@ -1,0 +1,17 @@
+<div class="upload_page"> 
+    {% load static %}
+    <link rel="stylesheet" text="text/css" href="{% static 'style/upload_page.css' %}">
+    <h1>Upload a file here...</h1>
+<form method="post", enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="btn btn-primary"> Upload it</button>
+    
+</form>
+<p>
+    Please <a href="{% url 'main' %}"> click here</a>to go back......
+</p>
+</div>
+    
+
+

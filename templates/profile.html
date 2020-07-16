@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+  <head> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'style/profile.css' %}"> 
+ </head> 
+ <body> 
+  <div class="profile-card"> 
+     <div class="Profile_Ion"></div>
+        <p align="center"> <i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i></p>
+   <div class="title">
+   <h3>My Profile</h3>
+    </div>  
+    <div class="main-container">
+      {% if user.is_authenticated %}
+     <div> <p><i class="fa fa-user fa-2x" aria-hidden="true" info></i>{{user.username}}</p>  </div>
+      <div><p><i class="fa fa-envelope fa-2x" aria-hidden="true" info></i>{{user.email}}</p>  </div>
+      {% endif %}
+      <div><p><b></b></p> </div>
+
+<hr>
+<p class="txt"> 
+  Please <a href="{% url 'main' %}"> click here</a> to go back......
+</p>
+</div>
+ 
+</body></html>
+ 
